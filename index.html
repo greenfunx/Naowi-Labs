@@ -17,6 +17,7 @@
   	}  
   	.gridjs-footer{
   		box-shadow:none;
+  		background: none;
   		padding: 5px;
   	}
   	.row {
@@ -193,18 +194,18 @@
     // Wrap the gridjs code inside a function to ensure it runs after the library is loaded
     function initializeGrid() {
       const table1 = new gridjs.Grid({
-        columns: ['Column 1', 'Column 2', 'Column 3'],
+        columns: ['Column 1', 'Column 2', 'Column 3','Column 4', 'Column 5', 'Column 6'],
         data: [
-          ['Data 1', 'Data 2', 'Data 3'],
-          ['Data 4', 'Data 5', 'Data 6'],
-          ['Data 1', 'Data 2', 'Data 3'],
-          ['Data 4', 'Data 5', 'Data 6'],
-          ['Data 1', 'Data 2', 'Data 3'],
-          ['Data 4', 'Data 5', 'Data 6'],
-          ['Data 1', 'Data 2', 'Data 3'],
-          ['Data 4', 'Data 5', 'Data 6'],
-          ['Data 1', 'Data 2', 'Data 3'],
-          ['Data 4', 'Data 5', 'Data 6'],
+          ['Data 1', 'Data 2', 'Data 3','Data 4', 'Data 5', 'Data 6'],
+          ['Data 4', 'Data 5', 'Data 6','Data 4', 'Data 5', 'Data 6'],
+          ['Data 1', 'Data 2', 'Data 3','Data 4', 'Data 5', 'Data 6'],
+          ['Data 4', 'Data 5', 'Data 6','Data 4', 'Data 5', 'Data 6'],
+          ['Data 1', 'Data 2', 'Data 3','','',''],
+          ['Data 4', 'Data 5', 'Data 6','','',''],
+          ['Data 1', 'Data 2', 'Data 3','','',''],
+          ['Data 4', 'Data 5', 'Data 6','','',''],
+          ['Data 1', 'Data 2', 'Data 3','','',''],
+          ['Data 4', 'Data 5', 'Data 6','','',''],
           // Add more data rows as needed
         ],
         sort: true,
