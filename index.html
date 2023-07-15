@@ -1,250 +1,218 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Minimalist Web App</title>
-  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/gridjs@1.3.0/dist/gridjs.production.min.js"></script>
-  <style>
-  
-  	input.gridjs-input{
-  		padding: 5px 10px;
-  	}
-  	.gridjs-wrapper{
-  		box-shadow:none;
-  		padding: 5px;
-  	}  
-  	.gridjs-footer{
-  		box-shadow:none;
-  		background: none;
-  		padding: 5px;
-  	}
-  	.row {
-  		margin-left: 0px;
-  		margin-right:0px;
-  	}
-  	.card {
-  		width: auto;
-  		background: rgba(0,0,0,.03);
-  	}
-  	#mainContent{
-  		border: 0.0625rem solid var(--card-border-color);
-	        border-radius: var(--universal-border-radius);
-	        padding-top: 1em;
-	        padding-bottom: 1em;
-		background: rgba(0,0,0,.03);
-  	}
-  	.nav-tabs{
-
-  	}
-  </style>
-</head>
-<body>
-  <div class="container-fluid">
-    <div class="header text-center">
-      <h1>Naomi Labs</h1>
-      <h3>Generate your own <mark class="tertiary">test data</mark> using AI and machine lerning.</h3>
-    </div>
-    
-    <hr>
-
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#tabX">Tab X</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#tabY">Tab Y</a>
-      </li>
-    </ul>
-
-    <div class="tab-content" id="mainContent">
-      <div class="tab-pane fade show active" id="tabX">
-        <div class="row">
-          <div class="col-md-2">
-            <ul class="nav nav-pills flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#tab1">Tab 1</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab2">Tab 2</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab3">Tab 3</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-10">
-            <div class="tab-content">
-              <div class="tab-pane fade show active" id="tab1">
-                <h3 class="text-center">Nested Tab 1</h3>
-                <div id="nestedTable1"></div>
-              </div>
-              <div class="tab-pane fade" id="tab2">
-                <h3 class="text-center">Nested Tab 2</h3>
-                <div id="nestedTable2"></div>
-              </div>
-              <div class="tab-pane fade" id="tab3">
-                <h3 class="text-center">Nested Tab 3</h3>
-                <div id="nestedTable3"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tab-pane fade" id="tabY">
-        <div class="row">
-          <div class="col-md-2">
-            <ul class="nav nav-pills flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#tab4">Tab 4</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab5">Tab 5</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-10">
-            <div class="tab-content">
-              <div class="tab-pane fade show active" id="tab4">
-                <h3 class="text-center">Nested Tab 4</h3>
-                <div id="nestedTable4"></div>
-              </div>
-              <div class="tab-pane fade" id="tab5">
-                <h3 class="text-center">Nested Tab 5</h3>
-                <div id="nestedTable5"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <hr>
-
-    <div class="row justify-content-center">
-      <div class="col-md-3">
-        <div class="card mb-3">
-          <h3 class="card-header text-center">Card 1</h3>
-          <div class="card-body">
-            <p class="card-text">Card 1 description goes here.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card mb-3">
-          <h3 class="card-header text-center">Card 2</h3>
-          <div class="card-body">
-            <p class="card-text">Card 2 description goes here.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card mb-3">
-          <h3 class="card-header text-center">Card 3</h3>
-          <div class="card-body">
-            <p class="card-text">Card 3 description goes here.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card mb-3">
-          <h3 class="card-header text-center">Card 4</h3>
-          <div class="card-body">
-            <p class="card-text">Card 4 description goes here.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <hr>
-
-
-  <script>
-    function openTab(evt, tabName) {
-      var i, tabContent, tabLinks;
-      tabContent = document.getElementsByClassName("tab-content");
-      for (i = 0; i < tabContent.length; i++) {
-        tabContent[i].style.display = "none";
-      }
-      tabLinks = document.getElementsByClassName("tab");
-      for (i = 0; i < tabLinks.length; i++) {
-        tabLinks[i].className = tabLinks[i].className.replace(" active", "");
-      }
-      document.getElementById(tabName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-
-    function openNestedTab(evt, tabName) {
-      var i, tabContent, tabLinks;
-      tabContent = document.getElementsByClassName("nested-tab-content");
-      for (i = 0; i < tabContent.length; i++) {
-        tabContent[i].style.display = "none";
-      }
-      tabLinks = document.getElementsByClassName("nested-tab");
-      for (i = 0; i < tabLinks.length; i++) {
-        tabLinks[i].className = tabLinks[i].className.replace(" active", "");
-      }
-      document.getElementById(tabName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-
-    // Wrap the gridjs code inside a function to ensure it runs after the library is loaded
-    function initializeGrid() {
-      const table1 = new gridjs.Grid({
-        columns: ['Column 1', 'Column 2', 'Column 3','Column 4', 'Column 5', 'Column 6'],
-        data: [
-          ['Data 1', 'Data 2', 'Data 3','Data 4', 'Data 5', 'Data 6'],
-          ['Data 4', 'Data 5', 'Data 6','Data 4', 'Data 5', 'Data 6'],
-          ['Data 1', 'Data 2', 'Data 3','Data 4', 'Data 5', 'Data 6'],
-          ['Data 4', 'Data 5', 'Data 6','Data 4', 'Data 5', 'Data 6'],
-          ['Data 1', 'Data 2', 'Data 3','','',''],
-          ['Data 4', 'Data 5', 'Data 6','','',''],
-          ['Data 1', 'Data 2', 'Data 3','','',''],
-          ['Data 4', 'Data 5', 'Data 6','','',''],
-          ['Data 1', 'Data 2', 'Data 3','','',''],
-          ['Data 4', 'Data 5', 'Data 6','','',''],
-          // Add more data rows as needed
-        ],
-        sort: true,
-        //search: true,
-        pagination: {
-          enabled: true,
-          limit: 4
-        }
-      }).render(document.getElementById('nestedTable1'));
-      const table2 = new gridjs.Grid({
-        columns: ['Column 1', 'Column 2', 'Column 3'],
-        data: [
-          ['Data 1', 'Data 2', 'Data 3'],
-          ['Data 4', 'Data 5', 'Data 6'],
-          ['Data 1', 'Data 2', 'Data 3'],
-          ['Data 4', 'Data 5', 'Data 6'],
-          ['Data 1', 'Data 2', 'Data 3'],
-          ['Data 4', 'Data 5', 'Data 6'],
-          ['Data 1', 'Data 2', 'Data 3'],
-          ['Data 4', 'Data 5', 'Data 6'],
-          ['Data 1', 'Data 2', 'Data 3'],
-          ['Data 4', 'Data 5', 'Data 6'],
-          // Add more data rows as needed
-        ],
-        sort: true,
-        //search: true,
-        pagination: {
-          enabled: true,
-          limit: 4
-        }
-      }).render(document.getElementById('nestedTable2'));
-    }
-
-    // Wait for the DOM content to load before initializing the grid
-    document.addEventListener('DOMContentLoaded', initializeGrid);
-  </script>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+<!doctype html>
+<html lang="en"  data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/x-icon" href="mylogo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Hello, world!</title>
+		<style>
+			/* body {
+				background-image: url('w1.jpg');
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: cover;
+			} */
+			article > header {
+				padding: 1em;
+				text-align: center;
+				margin-bottom: 20px;
+			}
+			article {
+				padding-bottom: 20px;
+				margin-top: 20px;
+				margin-bottom: 20px;
+				height: 340px;
+			}
+		</style>
+  </head>
+  <body>
+    <nav style="padding-left: 0.5em;padding-right: 0.5em; background-color: hsl(205, 20%, 94%); border-bottom: 1px solid hsl(205, 20%, 94%);">
+      <ul>
+        <li><img src="mylogo.png" alt="Company Logo" width="30px"heigh="30px"><strong> Naowi Labs</strong></li>
+      </ul>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#aboutus">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <main class="container-fluid">
+			<div class="grid" style="margin-bottom: 50px;">
+				<div>
+					<h1 style="text-align: center; vertical-align: middle; margin-bottom: 20px;">Generate <b>AI-Powered, Realistic, High Quality <mark>Test Data</mark></b> with <u>Naowi Labs</u></h1>
+					<hr>
+					<div class="grid" style="padding-left: 30px;padding-right: 30px;">
+						<div>
+							<ul>
+								<li><b>Realistic and High Quality:</b> synethtic data with AI</li>
+								<li><b>Scalable:</b> as per your needs</li>
+							</ul>
+						</div>
+						<div>
+							<ul>
+								<li><b>Variety of data:</b> Tabular, Text, Relational and more...</li>
+								<li><b>On-Demand:</b> available 24/7!</li>
+							</ul>
+						</div>
+					</div>
+					<p><a style="float: right;" href="#services">...more services</a></p>
+					<a href="#contact"><button style="width: 200px;margin: auto;">Book a Demo</button></a>
+				</div>
+				<div style="margin: auto;"><img src="wdata.png" alt="" width="450" height="450"></div>
+			</div>
+			<hr>
+			<div id="services" style="margin-bottom: 50px;">
+				<h2 style="text-align: center;">More services we provide:</h2>
+				<div class="grid" style="padding-left: 30px;padding-right: 30px;">
+					<div>
+						<ul>
+							<li><b>Data for Various Fields:</b> such as Names, Email Addresses, Phone Numbers, Customer Reviews, Log Entries, Account Details, Geospatial Location and so many more...</li>
+							<li><b>Relational Data:</b> We provide relational data, which means that it is organized into tables that are linked together. This makes it easy to find and use the data that you need.</li>
+							<li><b>Localization:</b> We provide localize the data to specific countries, so that the names and addresses are relevant for that country.</li>
+							<li><b>Customer Support:</b> Our customer support team is available 24/7 to help you with any questions or issues you may have.</li>
+						</ul>
+					</div>
+					<div>
+						<ul>
+							<li><b>Export in 10+ Formats:</b> such as CSV, JSON, XML, SQL etc. (Including Schema)</li>
+							<li><b>Privacy:</b> We <i class="bi bi-heart-fill"></i> Privacy. Therefore, our generated data is 100% yours and we do not have access to it, once we deliver to you.</li>
+							<li><b>Use Cases:</b> With our data, you can:</li>
+							<ul>
+								<li>Test your heavily data dependant softwares</li>
+								<li>Analyze the behavior of real-world users</li>
+								<li>Train your machine learning models</li>
+								<li>Automate several tasks</li>
+								<li>Create metadata for your newly launched multiplayer game</li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+				<a href="#contact"><button style="width: 200px;margin: auto;">Book a Demo</button></a>
+			</div>
+			<hr>
+			<div id="industries">
+				<h2 style="text-align: center;">Industries</h2>
+				<div class="grid">
+					<div>
+						<article>
+							<header><i class="bi bi-person-vcard"></i><b>&nbsp Social Media</b></header>
+							<ul>
+								<li>Testing scalabilty and recommendation systems</li>
+								<li>Simulating user interactions and content generation</li>
+							</ul>
+						</article>
+					</div>
+					<div>
+						<article>
+							<header><i class="bi bi-cash-coin"></i><b>&nbsp Finance</b></header>
+							<ul>
+								<li>Validating financial models and algorithms</li>
+								<li>Testing risk management systems and fraud detection</li>
+							</ul>
+						</article>
+					</div>
+					<div>
+						<article>
+							<header><i class="bi bi-shop"></i><b>&nbsp E-Commerce</b></header>
+							<ul>
+								<li>Evaluating website performance and user experience</li>
+								<li>Testing inventory management and order processing systems</li>
+							</ul>
+						</article>
+					</div>
+					<div>
+						<article>
+							<header><i class="bi bi-heart-pulse"></i></i><b>&nbsp Healthcare</b></header>
+							<ul>
+								<li>Training and testing medical diagnosis methods</li>
+								<li>Simulating patient data for research and system evaluation</li>
+							</ul>
+						</article>
+					</div>
+				</div>
+				<div class="grid">
+					<div>
+						<article>
+							<header><i class="bi bi-truck"></i><b>&nbsp Transportation</b></header>
+							<ul>
+								<li>Testing route optimization and logistics planning</li>
+								<li>Simulating traffic patterns and analyzing transportation networks</li>
+							</ul>
+						</article>
+					</div>
+					<div>
+						<article>
+							<header><i class="bi bi-cloud-sun"></i><b>&nbsp Weather</b></header>
+							<ul>
+								<li>Assessing the accuracy of weather prediction models</li>
+								<li>Testing emergency response systems and disaster planning</li>
+							</ul>
+						</article>
+					</div>
+					<div>
+						<article>
+							<header><i class="bi bi-book"></i><b>&nbsp Education</b></header>
+							<ul>
+								<li>Evaluating learning management systems and educational software</li>
+								<li>Simulating student enrollment and course scheduling</li>
+							</ul>
+						</article>
+					</div>
+					<div>
+						<article>
+							<header><i class="bi bi-headset"></i><b>&nbsp Customer Helpdesk</b></header>
+							<ul>
+								<li>Training customer inquiries and support interactions</li>
+								<li>Testing call routing, issue resolution, and customer service systems</li>
+							</ul>
+						</article>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div id="faq">
+				<h2 style="text-align: center;">Frequently Asked Questions:</h2>
+				<details>
+					<summary><b>How does your data generation service work?</b></summary>
+					<p>Our data generation service works by understanding your specific requirements and criteria for the data you need. We then generate custom data sets based on those requirements and deliver them to you in the desired format.</p>
+				</details>
+				<details>
+					<summary><b>How does your data compare to real-world data?</b></summary>
+					<p>Our data is statistically similar to real-world data. This means that the distribution of values in our data is similar to the distribution of values in real-world data. This makes our data a valuable tool for testing software that is expected to interact with real-world users.</p>
+				</details>
+				<details>
+					<summary><b>What is the pricing model for your data generation service?</b></summary>
+					<p>We offer a <u>pay-per-rows</u> pricing model, where you only pay for the number of rows or data records you require. This flexible pricing structure allows you to customize your data order based on your budget and requirements.</p>
+				</details>
+				<details>
+					<summary><b>Do you provide a demo or trial period?</b></summary>
+					<p>Yes, we offer a free demo to showcase the capabilities of our data generation service. It allows you to experience the quality and customization options before making a purchase decision.</p>
+				</details>
+				<details>
+					<summary><b>How can I request a data generation order?</b></summary>
+					<p>To request a data generation order, simply reach out to our team with your specific requirements, such as data format, volume, and any specific attributes you need. We will work closely with you to ensure we deliver the data that meets your expectations.</p>
+				</details>
+				<details>
+					<summary><b>Is my data kept confidential and secure?</b></summary>
+					<p>Absolutely. We prioritize data privacy and security. Your data is handled with strict confidentiality measures. We do not store your data, once it is delivered securely to you.</p>
+				</details>
+			</div>
+			<div id="aboutus">
+				<h2 style="text-align: center;">About Us:</h2>
+				<p>We are Naowi Labs. We are a startup company that provides realistic test data on-demand services. Our AI-powered platform generates synthetic data that is statistically similar to real-world data. This allows you to test your software with realistic data, without having to worry about privacy or security concerns.</p>
+				<p>We are an India-based startup with a passion for helping software teams deliver high-quality software. We are committed to providing our customers with the best possible, high quality and realistic test data, and we are constantly innovating to improve our platform.</p>
+			</div>
+			<hr>
+			<div id="contact">
+				<h2 style="text-align: center;">Book a Demo:</h2>
+				<div style="text-align: center;">
+					<p>Feel free to contact us at: &nbsp <i class="bi bi-envelope"></i> <a href="mailto:naowi-labs@proton.me">naowi-labs@proton.me</a></p>
+				</div>
+			</div>
+    </main>
+  </body>
 </html>
